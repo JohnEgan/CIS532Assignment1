@@ -1,6 +1,5 @@
 # part 2 stuff
 
-
 class Word:
     def init(self,word):
         self.value = word
@@ -10,15 +9,19 @@ class Line:
     def init(self):
         self.words = []
 
+def main():
+    userInput = getInputFromFile()
+    sortedInput = bubbleSort(userInput)
+
 def getInputFromFile():
-    with open('data.txt', 'r') as file:
+    with open('input.txt', 'r') as file:
         data = file.read().rstrip()
     dataList = data.split(' ')
 
     lineStorage = Line()
     for i in dataList:
         lineStorage.words.append(Word(i))
-    return
+    return dataList
 
 def bubbleSort(array):
     length = len(array)
