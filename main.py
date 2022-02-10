@@ -2,11 +2,21 @@
 # part 1 stuff
 def main():
     userInput = getInput()
+    circularShift(userInput)
     displayWords(userInput)
 
 # user input for part 1
 def getInput():
     return input("Enter String \n").split(' ')
+
+# first circular shift
+def circularShift(words):
+    new_sentences = []
+    for index in range(len(words)):
+        new_sentences.append(words)
+        words = words[1:] + [words[0]]
+    return new_sentences
+
 
 # display for part 1
 def displayWords(words):
